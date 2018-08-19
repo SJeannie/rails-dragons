@@ -1,0 +1,12 @@
+<h1>The Citizens of the Lands</h1>
+
+<% @users.each do |user| %>
+ <div class="">
+<h2><%= link_to user.name, user %></h2>
+ </div>
+<% end %>
+
+<h3> <button> <%= link_to "Start your own journey!", new_user_path %> </button> </h3>
+
+<h4><%= link_to "Visit the Dragons' Lair.", dragons_path %></h4>
+<h4> <%= link_to "Return to the Village Pub.", users_path %> </h4>

@@ -1,0 +1,18 @@
+<h1>Name Your Dragon</h1>
+
+<div>
+<%= form_with model: @dragon do |f|  %>
+  <label>Dragon's Name</label>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+
+  <div >
+    <label>Select your name:</label>
+    <%= f.collection_select :user_id, User.all, :id, :name, include_blank: true %>
+  </div>
+
+<% end %>
+
+<br><p>Your dragon's stats will be generated for you.</p><br>
+
+</div>

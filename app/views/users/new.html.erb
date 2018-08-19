@@ -1,0 +1,18 @@
+<h1>Start Your Journey</h1>
+
+<div>
+<%= form_with model: @user do |f|  %>
+<div>
+  <label>Your Name</label>
+  <%= f.text_field :name %>
+</div>
+<div >
+  <label>Your Clan</label>
+  <%= f.text_field :clan %>  
+</div>
+  <%= f.submit %>
+<% end %>
+
+<br><p>Your stats will be generated for you.</p><br>
+
+</div>

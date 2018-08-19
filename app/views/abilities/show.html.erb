@@ -1,0 +1,17 @@
+<h1><%= @ability.name %></h1>
+<h2><ul> <%= "Damage: - #{@ability.ability_type} #{@ability.damage}" %> </ul></h2>
+
+<!-- <% if @ability.dragons == nil %>
+  <ul> No dragon has this ability yet. </ul>
+<% else %>
+  <h3>The following dragons have this ability: </h3>
+  <% @ability.dragons.each do |dragon| %>
+  <ul> <%= link_to dragon.name, dragon_path %> </ul>
+  <% end %>
+<% end %> -->
+
+<h3><%= button_to 'Destroy this ability forever...', @ability, method: :delete, data: { confirm: 'Are you sure? You will never see this ability again.' } %></h3>
+
+<button> <%= link_to "Return to the Dragons' Lair", dragons_path %> </button>
+
+<button> <%= link_to "Return to the Village Pub", users_path %> </button>

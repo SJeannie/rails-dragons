@@ -1,0 +1,18 @@
+<h1><%= @dragon.name %></h1>
+
+<ul> <%= "Level #{@dragon.level}" %> </ul>
+<ul> <%= "MP #{@dragon.mp}" %> </ul>
+<ul> <%= "HP #{@dragon.hp}" %> </ul>
+
+<% if @dragon.user == nil %>
+  <ul> Does not yet have a human partner. </ul>
+<% else %>
+  <h3>Belongs to: </h3>
+  <ul> <%= link_to @dragon.user.name, @dragon.user %> </ul>
+<% end %>
+
+<h3><%= button_to 'Leave the lair forever...', @dragon, method: :delete, data: { confirm: 'Are you sure? You will never see this dragon again.' } %></h3>
+
+<button> <%= link_to "Return to the Lair", dragons_path %> </button>
+
+<button> <%= link_to "Return to the Village Pub", users_path %> </button>

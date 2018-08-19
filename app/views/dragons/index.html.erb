@@ -1,0 +1,11 @@
+<h1>The Lair</h1>
+
+<% @dragons.each do |dragon| %>
+ <div class="">
+<h2><%= link_to dragon.name, dragon %></h2>
+ </div>
+<% end %>
+
+<button> <%= link_to "Hatch a dragon egg!", new_dragon_path %> </button>
+
+<button> <%= link_to "Go to the Village Pub", users_path %> </button>

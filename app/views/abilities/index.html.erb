@@ -1,0 +1,12 @@
+<h1>Dragon Abilities</h1>
+
+<% @abilities.each do |ability| %>
+ <div class="">
+<h2><%= link_to ability.name, ability %></h2>
+ </div>
+<% end %>
+
+<h3> <button> <%= link_to "Create a new ability.", new_ability_path %> </button> </h3>
+
+<h4><%= link_to "Visit the Dragons' Lair.", dragons_path %></h4>
+<h4> <%= link_to "Return to the Village Pub.", users_path %> </h4>
