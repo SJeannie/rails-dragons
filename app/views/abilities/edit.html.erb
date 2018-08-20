@@ -1,2 +1,9 @@
-<h1>Abilities#edit</h1>
-<p>Find me in app/views/abilities/edit.html.erb</p>
+<br>
+<div>
+  <label>Empower a dragon/dragons with this ability:</label>
+  <%= form_with model: @ability do |f| %>
+  <%= f.collection_check_boxes :dragon_ids, Dragon.all, :id, :name %>
+  <%= f.submit  %>
+  <% end %>
+</div>
+<br>

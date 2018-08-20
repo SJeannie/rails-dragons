@@ -29,7 +29,7 @@ class AbilitiesController < ApplicationController
 
   def destroy
     @ability.destroy
-    redirect_to abilities_path 
+    redirect_to abilities_path
   end
 
     private
@@ -39,7 +39,7 @@ class AbilitiesController < ApplicationController
     end
 
     def ability_params
-      params.require(:ability).permit.(:name, :type, :damage)
+      params.require(:ability).permit(:name, :ability_type, :damage, dragon_ids: [])
     end
 
 end

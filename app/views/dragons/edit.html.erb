@@ -1,2 +1,13 @@
-<h1>Dragons#edit</h1>
-<p>Find me in app/views/dragons/edit.html.erb</p>
+<%= @dragon.name %>
+
+<%= form_with model: @dragon do |f| %>
+  <label>Name</label>
+  <%= f.text_field :name %><br>
+  <label>Abilities</label><br>
+  <%= f.collection_check_boxes :ability_ids, Ability.all, :id, :name %>
+  <%= f.submit %>
+  <% end %>
+
+  <button> <%= link_to "Return to the Dragons' Lair", dragons_path %> </button>
+
+  <button> <%= link_to "Return to the Village Pub", users_path %> </button>

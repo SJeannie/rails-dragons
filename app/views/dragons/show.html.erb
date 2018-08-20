@@ -1,8 +1,24 @@
 <h1><%= @dragon.name %></h1>
 
-<ul> <%= "Level #{@dragon.level}" %> </ul>
-<ul> <%= "MP #{@dragon.mp}" %> </ul>
-<ul> <%= "HP #{@dragon.hp}" %> </ul>
+<div>
+  <ul> <%= "Level #{@dragon.level}" %> </ul>
+  <ul> <%= "MP #{@dragon.mp}" %> </ul>
+  <ul> <%= "HP #{@dragon.hp}" %> </ul>
+</div>
+
+<h2><%= "#{@dragon.name}'s Abilities:" %></h2>
+
+<% if @dragon.abilities.count == 0 %>
+  <ul> This dragon has not developed any ability yet.</ul>
+  <ul><%= "To give #{@dragon.name} an ability, " %>
+  <%= link_to "rewrite its fate.", edit_dragon_path(@dragon) %></ul>
+<% else %>
+  <div>
+    <% @dragon.abilities.each do |ability| %>
+    <ul> <%= link_to ability.name, ability %> </ul>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @dragon.user == nil %>
   <ul> Does not yet have a human partner. </ul>
@@ -14,5 +30,7 @@
 <h3><%= button_to 'Leave the lair forever...', @dragon, method: :delete, data: { confirm: 'Are you sure? You will never see this dragon again.' } %></h3>
 
 <button> <%= link_to "Return to the Lair", dragons_path %> </button>
+
+<button> <%= link_to 'Show all abilities', abilities_path %></button>
 
 <button> <%= link_to "Return to the Village Pub", users_path %> </button>
